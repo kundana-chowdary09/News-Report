@@ -1,0 +1,150 @@
+<html>
+  <head>
+        <title><b>feedback</b></title>
+        
+        <style>
+            html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+            label{
+                font-size: 5mm;
+            }
+        </style>
+
+        <script>
+
+  function valid()
+  {
+    var fname = document.f.fname.value
+    var lname = document.f.lname.value
+    var email = document.f.email.value
+    var feedback = document.f.feedback.value
+    
+
+    if(fname.length==0)
+    {
+        document.getElementById('fnameerr').innerHTML = "Please Enter First Name"
+        document.getElementById("fname").focus()
+        return false;
+    }
+
+    if(lname.length==0)
+    {
+        document.getElementById('lnameerr').innerHTML = "Please Enter Last Name"
+        document.getElementById("lname").focus()
+        return false;
+    }
+    
+    if(email.length==0)
+    {
+        document.getElementById('emailerr').innerHTML = "Please Enter Email Address"
+        document.getElementById("email").focus()
+        return false;
+    }
+    if(feedback.length==0)
+    {
+        document.getElementById('feedback').innerHTML = "Please write feedback"
+        document.getElementById("feedback").focus()
+        return false;
+    }
+    
+    
+    
+  }
+
+</script>
+
+    <div align="center">
+    <body>
+            <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="content">
+            <h2>FEED BACK FORM</h2>
+            <hr>
+              <form name="f" action="home.html." method="post" onsubmit="return valid()">
+  
+<table align=center>
+
+<tr>
+<td>First Name</td>
+<td><input type="text" name="fname" id="fname" placeholder="Enter your first name"><i style="color:red" id="fnameerr"></i></td>
+</tr>
+<tr>
+<td>Last Name</td>
+<td><input type="text" name="lname" id="lname" placeholder="Enter your last name"><i style="color:red" id="lnameerr"></i></td>
+</tr>
+<tr>
+<td>Email</td>
+<td><input type="text" name="email" id="email" placeholder="Enter your email"><i style="color:red" id="emailerr"></i></td>
+</tr>
+<tr>
+<td>Feedback</td>
+<td><input type="text" name="feedback" id="feedback" placeholder="Enter your feedback"><i style="color:red" id="feedback"></i></td>
+</tr>
+<tr>
+
+<td align=center><input type="submit" value="submit"></td>
+
+
+
+
+</table>
+
+
+
+</form>
+<a href='home.html'><input type="submit" value="back"></a></div>
+</body>
+</html>
